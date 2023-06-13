@@ -1,9 +1,9 @@
 import random
-number=random.randint(1,100) #Generate random number between 1 to 100
 print('Welcome!')
 name = input('What is your name? ') #Save user's name
 
 def guess_the_number():
+    number=random.randint(1,100) #Generate random number between 1 to 100
     guess = int(input('Guess a number between 1 and 100: ')) #saves first guess 
     tries = 1 #By default user has tried 1 time
     while guess != number: #Continuously asks user to guess until they get it right
