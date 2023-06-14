@@ -1,11 +1,2 @@
-Ashlie: 1
-John: 5
-Brenda: 2
-Johnny: 18
-Michael: 33
-Sabrina: 10
-Josh: 1
-Kyle: 15
-Monica: 12
-Jordan: 45
-Megan: 23
+Ashlie: 7
+John: 9
