@@ -5,6 +5,7 @@ name = input('What is your name? ') #Save user's name
 
 def guess_the_number(): 
     number=random.randint(1,100) #Generate random number between 1 to 100
+    print(number)
     guess = int(input('Guess a number between 1 and 100: ')) #saves first guess 
     tries = 1 #By default user has tried 1 time
     while guess != number: #Continuously asks user to guess until they get it right
@@ -24,10 +25,18 @@ def guess_the_number():
 
     menu()
 
-def highscores(): #saves the highscores
-    highscores_text = open("highscores.txt","r")
-    highscores_total = highscores_text.read()
-    print(highscores_total)
+def highscores(): #open the highscores
+    scores = {} #creates dictionary
+
+    with open('highscores.txt','r') as f: #adds lines to dictionary
+        for line in f.readlines():
+            scores[line.split(':')[0].strip()] = int(line.split(':')[1].strip())
+    scores = sorted(scores.items(), key=lambda x:x[1], reverse=False) #sorts scores from lowest to highest
+    
+    top_ten = scores[:10]
+    for key, value in top_ten: 
+        print("%s\t%s" % (key, value))
+    
     menu()
 
 def end_game(): #end program
